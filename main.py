@@ -1,10 +1,4 @@
-from IPython.display import clear_output
 import random
-
-
-
-
-# test_board = ['X']*10
 
 
 # choosing if player is X or O
@@ -25,7 +19,7 @@ def player_markers():
 
 # displaying the game board
 def display_board(board):
-    print('\n'*100)
+    print('\n' * 100)
     print('')
     print('')
     print('   |   |   ')
@@ -87,9 +81,9 @@ def player_draw():
     else:
         return 'Player 2'
 
+
 def keep_playing():
     return input('Would you like to play once again? [y/n] ').lower().startswith('y')
-
 
 
 print('Welcome to Tic Tac Toe')
@@ -101,7 +95,7 @@ while True:
     pl1_mark, pl2_mark = player_markers()
 
     turn = player_draw()
-    print(turn +' will play first.')
+    print(turn + ' will play first.')
 
     while True:
         if turn == 'Player 1':
@@ -139,15 +133,3 @@ while True:
                     turn = 'Player 1'
     if not keep_playing():
         break
-#####################################################################
-# testing area
-
-# player_markers()
-
-# marker_placing(board, 'O', 2)
-# print(space_check(board, 2))
-#display_board(board)
-# print(board)
-# players_move()
-#print(player_draw())
-# print(winner_chck(board, 'X'))
