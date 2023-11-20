@@ -1,7 +1,7 @@
 from IPython.display import clear_output
 
 # board list
-board = ['#', 'X', 'X', 'X', '4', '5', '6', '7', '8', '9']
+board = ['#', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
 #test_board = ['X']*10
 
