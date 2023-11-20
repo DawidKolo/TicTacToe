@@ -19,7 +19,8 @@ def player_markers():
 
 # displaying the game board
 def display_board(board):
-    print('\n' * 100)
+#    print('\n' * 100)
+
     print('')
     print('')
     print('   |   |   ')
@@ -88,6 +89,9 @@ def keep_playing():
 
 print('Welcome to Tic Tac Toe')
 
+pl1 = input('What is the name of the player 1? ')
+pl2 = input('What is the name of the player 2? ')
+
 while True:
     # board list
     board = ['#', '1', '2', '3', '4', '5', '6', '7', '8', '9']
@@ -105,7 +109,7 @@ while True:
 
             if winner_chck(board, pl1_mark):
                 display_board(board)
-                print('Congrats, Player 1 has won!!!')
+                print('Congrats,'+f'{pl1} ' + 'has won!!!')
                 break
             else:
                 if full_board(board):
@@ -122,7 +126,7 @@ while True:
 
             if winner_chck(board, pl2_mark):
                 display_board(board)
-                print('Congrats, Player 2 has won!!!')
+                print('Congrats,'+f"{pl2} " + 'has won!!!')
                 break
             else:
                 if full_board(board):
