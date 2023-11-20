@@ -19,7 +19,7 @@ def player_markers():
 
 # displaying the game board
 def display_board(board):
-#    print('\n' * 100)
+    #    print('\n' * 100)
 
     print('')
     print('')
@@ -109,7 +109,7 @@ while True:
 
             if winner_chck(board, pl1_mark):
                 display_board(board)
-                print('Congrats,'+f'{pl1} ' + 'has won!!!')
+                print('Congrats, ' + f'{pl1} ' + 'has won!!!')
                 break
             else:
                 if full_board(board):
@@ -126,7 +126,7 @@ while True:
 
             if winner_chck(board, pl2_mark):
                 display_board(board)
-                print('Congrats,'+f'{pl2} ' + 'has won!!!')
+                print('Congrats, ' + f'{pl2} ' + 'has won!!!')
                 break
             else:
                 if full_board(board):
