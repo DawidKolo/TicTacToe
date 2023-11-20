@@ -1,4 +1,5 @@
 from IPython.display import clear_output
+import random
 
 # board list
 board = ['#', '1', '2', '3', '4', '5', '6', '7', '8', '9']
@@ -77,6 +78,12 @@ def winner_chck(board, mark):
             (board[1] == mark and board[5] == mark and board[9] == mark) or
             (board[3] == mark and board[5] == mark and board[7] == mark))
 
+def player_draw():
+    if random.randint(0, 1) == 0:
+        return 'Player 1'
+    else:
+        return 'Player 2'
+
 #####################################################################
 # testing area
 
@@ -87,5 +94,5 @@ def winner_chck(board, mark):
 display_board(board)
 # print(board)
 #players_move()
-print(board)
-print(winner_chck(board, 'X'))
+print(player_draw())
+#print(winner_chck(board, 'X'))
