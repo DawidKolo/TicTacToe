@@ -1,6 +1,6 @@
 from IPython.display import clear_output
 
-
+board = ['#', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 def player_markers():
     marker = ''
 
@@ -24,7 +24,26 @@ def display_board(board):
     print('-+-+-')
     print(board[7] + '|' + board[8] + '|' + board[9])
 
+def marker_placing(board, marker, position):
 
-board = ['#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
-player_markers()
-display_board(board)
+    board[position] = marker
+
+def players_move():
+    position = 0
+
+    while position not in ['1','2','3','4','5','6','7','8','9']:
+        position = input('Please select a position of your marker [1-9]: ')
+
+    return int(position)
+
+
+
+
+
+
+
+#player_markers()
+
+#marker_placing(board, 'o', 2)
+#display_board(board)
+players_move()
