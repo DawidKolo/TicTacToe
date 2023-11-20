@@ -1,10 +1,10 @@
 from IPython.display import clear_output
 import random
 
-# board list
-board = ['#', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
-#test_board = ['X']*10
+
+
+# test_board = ['X']*10
 
 
 # choosing if player is X or O
@@ -25,7 +25,7 @@ def player_markers():
 
 # displaying the game board
 def display_board(board):
-    clear_output()
+    print('\n'*100)
     print('')
     print('')
     print('   |   |   ')
@@ -49,7 +49,7 @@ def marker_placing(board, marker, position):
 
 
 # taking players input
-def players_move():
+def players_move(board):
     position = 0
 
     while position not in [1, 2, 3, 4, 5, 6, 7, 8, 9] or space_check(board, position):
@@ -62,11 +62,13 @@ def players_move():
 def space_check(board, position):
     return board[position] == 'O' or board[position] == 'X'
 
+
 def full_board(board):
     for i in range(1, 10):
         if not space_check(board, i):
             return False
     return True
+
 
 def winner_chck(board, mark):
     return ((board[1] == mark and board[2] == mark and board[3] == mark) or
@@ -78,21 +80,74 @@ def winner_chck(board, mark):
             (board[1] == mark and board[5] == mark and board[9] == mark) or
             (board[3] == mark and board[5] == mark and board[7] == mark))
 
+
 def player_draw():
     if random.randint(0, 1) == 0:
         return 'Player 1'
     else:
         return 'Player 2'
 
+def keep_playing():
+    return input('Would you like to play once again? [y/n] ').lower().startswith('y')
+
+
+
+print('Welcome to Tic Tac Toe')
+
+while True:
+    # board list
+    board = ['#', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+
+    pl1_mark, pl2_mark = player_markers()
+
+    turn = player_draw()
+    print(turn +' will play first.')
+
+    while True:
+        if turn == 'Player 1':
+            display_board(board)
+            position = players_move(board)
+            marker_placing(board, pl1_mark, position)
+
+            if winner_chck(board, pl1_mark):
+                display_board(board)
+                print('Congrats, Player 1 has won!!!')
+                break
+            else:
+                if full_board(board):
+                    display_board(board)
+                    print('The game is draw')
+                    break
+                else:
+                    turn = 'Player 2'
+
+        else:
+            display_board(board)
+            position = players_move(board)
+            marker_placing(board, pl2_mark, position)
+
+            if winner_chck(board, pl2_mark):
+                display_board(board)
+                print('Congrats, Player 2 has won!!!')
+                break
+            else:
+                if full_board(board):
+                    display_board(board)
+                    print('The game is draw')
+                    break
+                else:
+                    turn = 'Player 1'
+    if not keep_playing():
+        break
 #####################################################################
 # testing area
 
 # player_markers()
 
-#marker_placing(board, 'O', 2)
-#print(space_check(board, 2))
-display_board(board)
+# marker_placing(board, 'O', 2)
+# print(space_check(board, 2))
+#display_board(board)
 # print(board)
-#players_move()
-print(player_draw())
-#print(winner_chck(board, 'X'))
+# players_move()
+#print(player_draw())
+# print(winner_chck(board, 'X'))
