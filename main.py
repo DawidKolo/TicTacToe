@@ -126,7 +126,7 @@ while True:
 
             if winner_chck(board, pl2_mark):
                 display_board(board)
-                print('Congrats,'+f"{pl2} " + 'has won!!!')
+                print('Congrats,'+f'{pl2} ' + 'has won!!!')
                 break
             else:
                 if full_board(board):
