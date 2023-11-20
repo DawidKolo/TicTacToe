@@ -6,7 +6,7 @@ def player_markers():
     marker = ''
 
     while marker != 'X' and marker != 'O':
-        marker = input('Player 1, pick X or O: ').upper()
+        marker = input(f'{pl1}, pick X or O: ').upper()
 
     player_1 = marker
 
@@ -49,7 +49,9 @@ def players_move(board):
 
     while position not in [1, 2, 3, 4, 5, 6, 7, 8, 9] or space_check(board, position):
         temp = input('Please select a position of your marker [1-9]: ')
-        position = int(temp)
+        if temp.isnumeric():
+            position = int(temp)
+
     return position
 
 
