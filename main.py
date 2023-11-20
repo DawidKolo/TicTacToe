@@ -44,7 +44,7 @@ def marker_placing(board, marker, position):
 def players_move():
     position = 0
 
-    while position not in ['1','2','3','4','5','6','7','8','9']:
+    while position not in ['1','2','3','4','5','6','7','8','9'] or space_check(board, position):
         position = input('Please select a position of your marker [1-9]: ')
 
     return int(position)
