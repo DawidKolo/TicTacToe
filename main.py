@@ -99,7 +99,10 @@ while True:
     pl1_mark, pl2_mark = player_markers()
 
     turn = player_draw()
-    print(turn + ' will play first.')
+    if turn == 'Player 1':
+        print(f'{pl1}' + ' will play first.')
+    else:
+        print(f'{pl2}' + ' will play first.')
 
     while True:
         if turn == 'Player 1':
